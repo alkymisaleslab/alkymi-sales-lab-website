@@ -359,9 +359,16 @@ h3{line-height:1.2}
 .case-details div{padding-top:15px;border-top:1px solid var(--line)}
 .case-details dt{margin-bottom:6px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
 .case-details dd{margin:0;line-height:1.55;color:var(--ink)}
-.client-card--case .client-card-copy > .case-evidence{display:flex;align-items:center;gap:18px;max-width:none;margin:26px 0 0;padding:20px 0 0;border-top:1px solid var(--line);color:var(--ink)}
-.case-evidence strong{flex:none;font-family:var(--display);font-size:clamp(2rem,3vw,2.75rem);letter-spacing:-.06em;line-height:1}
-.case-evidence span{line-height:1.45;font-size:.9rem}
+.client-card--case .client-card-copy > .case-evidence{max-width:none;margin:26px 0 0;padding:20px 0 0;border-top:1px solid var(--line);color:var(--ink)}
+.case-evidence__head{display:flex;align-items:baseline;justify-content:space-between;gap:20px}
+.case-evidence__label{margin:0;font-family:var(--display);font-size:1.15rem;font-weight:700;letter-spacing:-.04em;line-height:1.3}
+.case-evidence__head strong{flex:none;font-family:var(--display);font-size:1.8rem;letter-spacing:-.06em;line-height:1}
+.case-evidence__head small{font-size:.58em;letter-spacing:-.03em}
+.rating-track{height:8px;margin-top:18px;overflow:hidden;border-radius:20px;background:#e4d8c8}
+.rating-fill{display:block;height:100%;border-radius:20px;background:#171512}
+.rating-fill--viu{width:88.6%}
+.rating-fill--jm{width:91.6%}
+.case-evidence__meta{margin:12px 0 0;color:var(--muted);font-size:.84rem;line-height:1.55}
 .case-quote{margin:25px 0 0;padding:20px 22px;background:var(--paper);border-left:3px solid var(--accent)}
 .case-quote p{margin:0;max-width:none;font-size:.94rem;line-height:1.55;color:var(--ink)}
 .case-quote footer{margin-top:12px;font-size:.8rem;font-weight:700;color:var(--muted)}
@@ -466,8 +473,7 @@ h3{letter-spacing:-.045em}
 .case-details div{padding:17px 0;border-top:1px solid var(--line)}
 .case-details dt{margin-bottom:7px;color:#766249}
 .case-details dd{font-size:.96rem;line-height:1.6}
-.client-card--case .client-card-copy>.case-evidence{margin-top:auto;padding-top:25px;gap:21px}
-.case-evidence span{font-size:.87rem;line-height:1.55}
+.client-card--case .client-card-copy>.case-evidence{margin-top:auto;padding-top:25px}
 .testimonial-heading{margin-top:47px}
 .testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .testimonial-grid .case-quote{padding:29px 31px 27px;border-top:3px solid #a88f6b}
@@ -584,8 +590,8 @@ h3{letter-spacing:-.045em}
   .client-card--case h3{font-size:1.48rem}
   .client-name--brand .brand-mark--jm{width:80px}
   .client-name--brand .brand-mark--viu{width:37px;height:37px}
-  .client-card--case .client-card-copy>.case-evidence{display:block}
-  .case-evidence strong{display:block;margin-bottom:11px}
+  .case-evidence__label{font-size:1.04rem}
+  .case-evidence__head strong{font-size:1.6rem}
   .testimonial-grid{grid-template-columns:1fr}
   .testimonial-grid .case-quote{padding:23px}
   .testimonial-grid .case-quote p{font-size:1.05rem}
@@ -784,7 +790,11 @@ form?.addEventListener('submit',event=>{
                   <div><dt>How we prepared</dt><dd>We spoke with leaders and observed sample pitches to tailor the workshop.</dd></div>
                   <div><dt>What we did</dt><dd>Ran a one-day Commercial Sales Lab using Viu media-sales situations, practice and direct feedback.</dd></div>
                 </dl>
-                <p class="case-evidence"><strong>4.43/5</strong><span>Participant feedback: average rating for the workshop's practical tools across seven forms. Repeat exercises also showed improvement after feedback.</span></p>
+                <div class="case-evidence">
+                  <div class="case-evidence__head"><p class="case-evidence__label">Practical tools for client conversations</p><strong>4.43<small>/5</small></strong></div>
+                  <div class="rating-track" aria-hidden="true"><span class="rating-fill rating-fill--viu"></span></div>
+                  <p class="case-evidence__meta">Average participant rating across 7 forms. Repeat exercises improved after feedback.</p>
+                </div>
               </div>
             </article>
             <article class="client-card client-card--case" aria-labelledby="jm-case-title">
@@ -797,7 +807,11 @@ form?.addEventListener('submit',event=>{
                   <div><dt>What we observed</dt><dd>Strong individual expertise needed a clearer shared story, visible pitch leadership and ownership of questions.</dd></div>
                   <div><dt>What we did</dt><dd>Delivered a two-day programme around client presence, one shared pitch story and Q&amp;A ownership, followed by a report with development priorities.</dd></div>
                 </dl>
-                <p class="case-evidence"><strong>4.58/5</strong><span>Participant feedback: average rating for relevance to client and pitch situations across twelve forms.</span></p>
+                <div class="case-evidence">
+                  <div class="case-evidence__head"><p class="case-evidence__label">Relevance to client and pitch situations</p><strong>4.58<small>/5</small></strong></div>
+                  <div class="rating-track" aria-hidden="true"><span class="rating-fill rating-fill--jm"></span></div>
+                  <p class="case-evidence__meta">Average participant rating across 12 forms.</p>
+                </div>
               </div>
             </article>
           </div>
